@@ -31,6 +31,9 @@ public:
   ///* predicted sigma points matrix
   MatrixXd Xsig_pred_;
 
+  //create sigma point matrix
+  MatrixXd Xsig_aug_;
+
   ///* time when the state is true, in us
   long long time_us_;
 
@@ -64,9 +67,19 @@ public:
   ///* Augmented state dimension
   int n_aug_;
 
+  //create augmented mean vector
+  VectorXd x_aug_;
+
+  //create augmented state covariance
+  MatrixXd P_aug_;
+
   ///* Sigma point spreading parameter
   double lambda_;
 
+  // lidar and radar NIS
+  double NIS_radar_;
+
+  double NIS_lidar_;
 
   /**
    * Constructor
